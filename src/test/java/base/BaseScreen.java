@@ -3,7 +3,7 @@ package base;
 import org.openqa.selenium.WebDriver;
 import utils.DriverManager;
 
-public class BaseScreen {
+public abstract class BaseScreen {
     protected WebDriver driver;
 
     public BaseScreen() {
