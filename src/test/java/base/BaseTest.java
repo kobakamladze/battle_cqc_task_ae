@@ -5,13 +5,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import utils.DriverManager;
+import utils.Config;
 
 import java.time.Duration;
 
 public abstract class BaseTest {
 
-    private static final String URL = "http://ru.battleship-game.org/";
+    private static final String URL = Config.get("base_url");
     protected static final int MAX_WAIT = 10;
     protected WebDriver driver;
     protected WebDriverWait wait;
@@ -27,6 +27,8 @@ public abstract class BaseTest {
 
     @AfterMethod
     public void tearDown() {
-        DriverManager.quitDriver();
+        if (driver != null) {
+            DriverManager.quit();
+        }
     }
 }

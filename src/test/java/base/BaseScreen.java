@@ -1,12 +1,14 @@
 package base;
 
-import org.openqa.selenium.WebDriver;
-import utils.DriverManager;
+import base.elements.TextElement;
+import org.openqa.selenium.By;
 
 public abstract class BaseScreen {
-    protected WebDriver driver;
 
-    public BaseScreen() {
-        this.driver = DriverManager.getDriver();
+    protected TextElement screenBasicElement;
+
+    public BaseScreen(By by, String elementName) {
+        screenBasicElement = new TextElement(by, elementName);
+        screenBasicElement.waitForIsDisplayed();
     }
 }
