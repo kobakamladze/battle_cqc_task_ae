@@ -14,41 +14,19 @@ import utils.waiters.SmartWait;
 
 public class GameBoard extends BaseScreen {
 
-    // battlefield battlefield__self battlefield__wait - inactive opponents
-    // battlefield battlefield__rival battlefield__wait - inactive players
-    // battlefield-row - row
-    // battlefield-cell battlefield-cell__empty - active
-    // battlefield-cell battlefield-cell__miss battlefield-cell__last - missed
-    // battlefield-cell battlefield-cell__hit battlefield-cell__done battlefield-cell__last - killed
-    // battlefield-cell battlefield-cell__hit battlefield-cell__last - hit
-    // notification notification__game-over-win - game won
-    // notification notification__game-over-lose - game lost
-    // notifications-wrap
-    // battlefield-cell battlefield-cell__hit battlefield-cell__done
-    // notification notification__waiting-for-rival none
-    // notification notification__move-off
-    // battlefield-cell battlefield-cell__miss battlefield-cell__last
-
     private static final Logger log = LoggerFactory.getLogger(GameBoard.class.getSimpleName());
 
     private static final int CELL_ROW_COUNT = 10;
     private static final int CELL_COLUMN_COUNT = 10;
-    private static final int MAX_HIT_COUNT = 20;
     private static final String HIT_CELL_LOC = ".battlefield-cell__hit";
     private static final String KILL_CELL_LOC = ".battlefield-cell__done";
     private static final String MISS_CELL_LOC = ".battlefield-cell__miss";
-    private static final String BATTLEFIELD_CELL_LOC = ".battlefield-cell";
-    private static final String BATTLEFIELD_TABLE_LOC = ".battlefield-table";
-    private static final String PLAYERS_BATTLEFIELD_LOC = ".battlefield__self";
     private static final String OPPONENTS_BATTLEFIELD_LOC = ".battlefield__rival";
     private static final String OPPONENTS_BOARD = ".battlefield.battlefield__rival";
     private static final String WAITING_OPPONENTS_BOARD_LOC = "battlefield__wait";
-    private static final String NOTIFICATION_WIN_LOC = ".notification__game-over-win";
-    private static final String NOTIFICATION_LOOSE_LOC = ".notification__game-over-lose";
     private static final String EMPTY_CELL_LOC = ".battlefield-cell__empty";
     private static final String CELL_LOC = ".battlefield-cell-content";
     private static final String CELL_GRID = ".battlefield-table-placeholder";
-    private static final String RECENTLY_HIT_CELL = ".battlefield-cell__last";
 
     CellElements hitCells;
     CellElements killedCells;
